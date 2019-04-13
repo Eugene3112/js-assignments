@@ -23,6 +23,7 @@
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
 function findElement(arr, value) {
+   return arr.indexOf(value);
    throw new Error('Not implemented');
 }
 
@@ -38,6 +39,12 @@ function findElement(arr, value) {
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
 function generateOdds(len) {
+   let arr = [];
+   arr.length = len;
+   arr.fill(0);
+
+   return arr.map(function(value, index, array) {
+      return (1 + index * 2)});
    throw new Error('Not implemented');
 }
 
@@ -54,6 +61,7 @@ function generateOdds(len) {
  *    [] => [] 
  */
 function doubleArray(arr) {
+   return arr.concat(arr);
    throw new Error('Not implemented');
 }
 
@@ -70,6 +78,7 @@ function doubleArray(arr) {
  *    [] => [] 
  */
 function getArrayOfPositives(arr) {
+   return arr.filter(function(item){return item > 0});
    throw new Error('Not implemented');
 }
 
@@ -85,6 +94,7 @@ function getArrayOfPositives(arr) {
  *    [ 'cat, 'dog', 'raccon' ] => [ 'cat', 'dog', 'racoon' ]
  */
 function getArrayOfStrings(arr) {
+   return arr.filter(function(item){return typeof(item)===typeof('string')});
    throw new Error('Not implemented');
 }
 
@@ -102,7 +112,9 @@ function getArrayOfStrings(arr) {
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
 function removeFalsyValues(arr) {
+   return arr.filter(function(item){return item});
    throw new Error('Not implemented');
+   
 }
 
 /**
@@ -116,6 +128,7 @@ function removeFalsyValues(arr) {
  *    [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]  => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
  */
 function getUpperCaseStrings(arr) {
+   return arr.map(function(item){return item.toUpperCase()})
    throw new Error('Not implemented');
 }
 
@@ -131,6 +144,7 @@ function getUpperCaseStrings(arr) {
  *    [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
  */
 function getStringsLength(arr) {
+   return arr.map(function(item){return item.length})
    throw new Error('Not implemented');
 }
 
