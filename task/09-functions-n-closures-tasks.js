@@ -173,6 +173,12 @@ function partialUsingArguments(fn) {
  *   getId10() => 11
  */
 function getIdGeneratorFunction(startFrom) {
+    var id = startFrom;
+    return function(){
+        var currentId = id;
+        id++;
+        return currentId;
+    };
     throw new Error('Not implemented');
 }
 
