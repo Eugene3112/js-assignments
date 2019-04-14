@@ -160,6 +160,7 @@ function getStringsLength(arr) {
  *    [ 1, 'b', 'c'], 0, 'x'  => [ 'x', 1, 'b', 'c' ]
  */
 function insertItem(arr, item, index) {
+   return arr.splice(index,0,item);
    throw new Error('Not implemented');
 }
 
@@ -174,6 +175,7 @@ function insertItem(arr, item, index) {
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'a', 'b', 'c' ]
  */
 function getHead(arr, n) {
+   return arr.filter(function(item,index){return index<n})
    throw new Error('Not implemented');
 }
 
@@ -189,6 +191,7 @@ function getHead(arr, n) {
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'b', 'c', 'd' ]
  */
 function getTail(arr, n) {
+   return arr.filter(function(item,index,array){ return index >= (array.length - n)})
    throw new Error('Not implemented');
 }
 
@@ -214,6 +217,7 @@ function getTail(arr, n) {
  *    +'30,31,32,33,34'
  */
 function toCsvText(arr) {
+   return Array.from(arr, function(item){return item.join(",")}).join("\n");
    throw new Error('Not implemented');
 }
 
@@ -229,6 +233,7 @@ function toCsvText(arr) {
  *   [ 10, 100, -1 ]      => [ 100, 10000, 1 ]
  */
 function toArrayOfSquares(arr) {
+   return arr.map(function(item){return item*item})
    throw new Error('Not implemented');
 }
 
@@ -263,6 +268,7 @@ function getMovingSum(arr) {
  * [ "a" ] => []
  */
 function getSecondItems(arr) {
+   return arr.filter(function(item,index){return (index % 2 !== 0)});
    throw new Error('Not implemented');
 }
 
