@@ -324,6 +324,13 @@ function get3TopItems(arr) {
  *   [ 1, '2' ] => 1
  */
 function getPositivesCount(arr) {
+   return arr.reduce(function(prev,curr){
+      if((typeof(curr) === typeof(1))&&(curr > 0))
+      {
+         return prev + 1;
+      }
+      return prev;
+   },0);
    throw new Error('Not implemented');
 }
  
@@ -341,6 +348,10 @@ function getPositivesCount(arr) {
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
 function sortDigitNamesByNumericOrder(arr) {
+   let digits = ['zero','one','two','three','four','five','six','seven','eight','nine']
+   return arr.sort(function(a,b){
+      return digits.indexOf(a) - digits.indexOf(b);
+   });
    throw new Error('Not implemented');
 }
 
@@ -357,6 +368,9 @@ function sortDigitNamesByNumericOrder(arr) {
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
 function getItemsSum(arr) {
+   return arr.reduce(function(prev,curr){
+      return prev + curr;
+},0);
    throw new Error('Not implemented');
 }
  
@@ -373,6 +387,13 @@ function getItemsSum(arr) {
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
 function getFalsyValuesCount(arr) {
+   return arr.reduce(function(prev,curr){
+      if(!curr)
+      {
+         return prev + 1;
+      }
+      return prev;
+   },0);
    throw new Error('Not implemented');
 }
 
@@ -391,6 +412,13 @@ function getFalsyValuesCount(arr) {
  *    [ true, 0, 1, 'true' ], true => 1
  */
 function findAllOccurences(arr, item) {
+   return arr.reduce(function(prev,curr){
+      if(curr === item)
+      {
+         return prev + 1;
+      }
+      return prev;
+   },0);
    throw new Error('Not implemented');
 }
 
@@ -406,6 +434,7 @@ function findAllOccurences(arr, item) {
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
 function toStringList(arr) {
+   return arr.join(',');
    throw new Error('Not implemented');
 }
 
@@ -489,6 +518,7 @@ function getIntervalArray(start, end) {
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
 function distinct(arr) {
+   return  (arr.filter(function(value, index, self){return self.indexOf(value) === index;}));
    throw new Error('Not implemented');
 }
 
